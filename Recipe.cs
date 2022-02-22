@@ -19,7 +19,7 @@ namespace CocktailEF
         /// The list of ingredients.
         /// <br></br>Also known as the recipe.
         /// </summary>
-        public ICollection<Ingredient>? Ingredients { get; private set; }
+        public List<Ingredient>? Ingredients { get; private set; }
         /// <summary>
         /// The constructor for the recipe
         /// </summary>

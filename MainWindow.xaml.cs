@@ -22,33 +22,25 @@ namespace CocktailEF
     {
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
+
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredients.Add(new Ingredient("rom", 250));
+            ingredients.Add(new Ingredient("cola", 250));
+
+            Recipe recipe = new Recipe(ingredients);
 
             using (DrinkContext ctx = new DrinkContext())
             {
-                var drinks = ctx.Drinks.ToList();
+                //Drink drink = new Drink("Rom & Cola", "Simple drink, 50/50 rom & coke", recipe);
+
+                //ctx.Drinks.Add(drink);
+                //ctx.SaveChanges();
+
+                var drinks = ctx.Drinks?.ToList();
             }
-
-            //List<Ingredient> ingredients = new List<Ingredient>();
-            //ingredients.Add(new Ingredient("rom", 250));
-            //ingredients.Add(new Ingredient("cola", 250));
-
-            //Recipe recipe = new Recipe(ingredients);
-
-            //using (DrinkContext ctx = new DrinkContext())
-            //{
-
-
-
-            //    Drink drink = new Drink("Rom & Cola", "Simple drink, 50/50 rom & coke", recipe);
-
-            //    ctx.Drinks.Add(drink);
-            //    ctx.SaveChanges();
-
-            //    var drinks = ctx.Drinks.ToList();
-            //}
-
         }
+        #region events
         #region Drinks events
         private void DrinksListBoxKeyDown(object sender, KeyEventArgs e)
         {
@@ -119,10 +111,10 @@ namespace CocktailEF
 
         }
         #endregion
-
         private void SaveToDbButton(object sender, RoutedEventArgs e)
         {
 
         }
+        #endregion
     }
 }

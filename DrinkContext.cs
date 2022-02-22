@@ -9,11 +9,11 @@ namespace CocktailEF
 {
     internal class DrinkContext : DbContext
     {
-        public DrinkContext() : base()
+        public DrinkContext() : base(nameOrConnectionString: @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;")
         {
 
         }
 
-        public DbSet<Drink> Drinks { get; set; }
+        public DbSet<Drink>? Drinks { get; set; }
     }
 }
