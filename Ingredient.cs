@@ -18,11 +18,11 @@ namespace CocktailEF
         /// <summary>
         /// The name of the ingredient
         /// </summary>
-        public string Name { get; private set; }
+        public string? Name { get; private set; }
         /// <summary>
         /// The amount of the ingredient in milliliters (ml)
         /// </summary>
-        public uint Amount { get; private set; }
+        public uint? Amount { get; private set; }
         /// <summary>
         /// Constructor for the Ingredient class
         /// </summary>
@@ -32,6 +32,13 @@ namespace CocktailEF
         {
             Name = name;
             Amount = amount;
+        }
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
+        public Ingredient()
+        {
+
         }
     }
 }

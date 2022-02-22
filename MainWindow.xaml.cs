@@ -22,29 +22,31 @@ namespace CocktailEF
     {
         public MainWindow()
         {
-            InitializeComponent();
-
-            List<Ingredient> ingredients = new List<Ingredient>();
-            ingredients.Add(new Ingredient("rom", 250));
-            ingredients.Add(new Ingredient("cola", 250));
-
-            Recipe recipe = new Recipe(ingredients);
+            //InitializeComponent();
 
             using (DrinkContext ctx = new DrinkContext())
             {
-                var drinks = ctx.Drinks;
-                //var drinks = (from d in ctx.Drinks
-                //                orderby d.Name
-                //                select d).ToList<Drink>();
-
-
-                /*
-                Drink drink = new Drink("Rom & Cola", "Simple drink, 50/50 rom & coke", recipe);
-
-                ctx.Drinks.Add(drink);
-                ctx.SaveChanges();
-                */
+                var drinks = ctx.Drinks.ToList();
             }
+
+            //List<Ingredient> ingredients = new List<Ingredient>();
+            //ingredients.Add(new Ingredient("rom", 250));
+            //ingredients.Add(new Ingredient("cola", 250));
+
+            //Recipe recipe = new Recipe(ingredients);
+
+            //using (DrinkContext ctx = new DrinkContext())
+            //{
+
+
+
+            //    Drink drink = new Drink("Rom & Cola", "Simple drink, 50/50 rom & coke", recipe);
+
+            //    ctx.Drinks.Add(drink);
+            //    ctx.SaveChanges();
+
+            //    var drinks = ctx.Drinks.ToList();
+            //}
 
         }
         #region Drinks events

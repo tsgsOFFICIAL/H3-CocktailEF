@@ -19,15 +19,15 @@ namespace CocktailEF
         /// <summary>
         /// The name of the drink
         /// </summary>
-        public string Name { get; private set; }
+        public string? Name { get; private set; }
         /// <summary>
         /// A short description of the drink
         /// </summary>
-        public string Description { get; private set; }
+        public string? Description { get; private set; }
         /// <summary>
         /// The recipe for the drink
         /// </summary>
-        public Recipe Recipe { get; private set; }
+        public Recipe? Recipe { get; private set; }
         /// <summary>
         /// Constructor for the drink class 🔞
         /// </summary>
@@ -39,6 +39,13 @@ namespace CocktailEF
             Name = name;
             Description = description;
             Recipe = recipe;
+        }
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
+        public Drink()
+        {
+
         }
     }
 }
