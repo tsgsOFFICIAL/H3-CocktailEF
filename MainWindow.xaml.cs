@@ -32,7 +32,7 @@ namespace CocktailEF
 
             using (DrinkContext ctx = new DrinkContext())
             {
-                var drinks = ctx.Drinks.ToList();
+                var drinks = ctx.Drinks;
                 //var drinks = (from d in ctx.Drinks
                 //                orderby d.Name
                 //                select d).ToList<Drink>();
